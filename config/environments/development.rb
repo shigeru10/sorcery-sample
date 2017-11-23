@@ -9,6 +9,8 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  config.read_encrypted_secrets = true
+
   # Show full error reports.
   config.consider_all_requests_local = true
 
@@ -58,8 +60,8 @@ Rails.application.configure do
     address:               'smtp.gmail.com',
     port:                  587,
     domain:                'gmail.com',
-    user_name:             'email@gmail.com',
-    password:              'password',
+    user_name:             Rails.application.secrets.user_name.to_s,
+    password:              Rails.application.secrets.mail_password.to_s,
     authentication:        'login',
     enable_starttls_auto:  true
   }

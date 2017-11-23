@@ -24,8 +24,8 @@ default: &default
 development:
   <<: *default
   host: localhost
-  username: <%= ENV['USERNAME'] %>
-  password: <%= ENV['PASSWORD'] %>
+  username: <%= Rails.application.secrets.username %>
+  password: <%= Rails.application.secrets.password %>
   database: sorcery_sample_dev
 
   # The specified database role being used to connect to postgres.
