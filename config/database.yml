@@ -24,8 +24,8 @@ default: &default
 development:
   <<: *default
   host: localhost
-  username: sorcery_sample_dev
-  password: sorcery_sample_dev
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
   database: sorcery_sample_dev
 
   # The specified database role being used to connect to postgres.
